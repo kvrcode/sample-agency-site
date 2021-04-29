@@ -1,0 +1,373 @@
+// BEM!!!!!
+
+$border: 1px solid lightgray;
+
+$dark-blue: #0050C8;
+$blue: #2F5BEA;
+$green: #87BC25;
+$white: #f4f4f4;
+
+$bold: 700;
+$regular: 400;
+
+$font-size-heading-mobile: 2.2rem;
+$font-size-sub-heading-mobile: 1.4rem;
+
+$section-padding-mobile: 4rem 2rem;
+
+@import "reset";
+@import "hamburgers-settings";
+@import "../../node_modules/hamburgers/_sass/hamburgers/hamburgers.scss";
+
+*{
+    font-family: Poppins, Helvetica, sans-serif;
+}
+
+html{
+    overflow-x: hidden;
+    font-size: 62.5%;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.heading{
+    font-size: $font-size-heading-mobile;
+}
+
+.sub-heading{
+    font-size: $font-size-sub-heading-mobile;
+}
+//headings
+//buttons
+//"wrapper" div -- section
+//BEM...
+
+// --------------
+// --- header ---
+// --------------
+
+header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2rem;
+}
+
+.brand{
+    font-size: 1.5rem;
+}
+
+nav{
+    height: calc(100vh - 82px);
+    opacity: 0;
+    transform: translate(100%, 0);
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+}
+.nav-active{
+    transform: translate(0);
+    opacity: 1;
+}
+
+nav a{
+    padding: 1rem 0;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    font-size: 1.4rem;
+}
+
+.contact{
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background-color: $dark-blue;
+    color: $white;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 1.2rem;
+}
+
+.hamburger{
+    outline: none;
+}
+
+// --------------
+// ---- hero ----
+// --------------
+
+.hero{
+    height: 70vh;
+    padding: $section-padding-mobile;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__heading{
+        // font-size: 2.2rem;
+        // padding-top: 5rem;
+        font-weight: $bold;
+    }
+
+    &__sub-text{
+        margin-top: .85rem;
+        font-size: 1.4rem;
+        // color: grey;
+    }
+
+    &__cta{
+        margin-top: 2.5rem;
+    }
+
+    &__btn{
+        padding: 0.75rem 1rem;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1.2rem;
+    }
+
+    &__contact{
+        background-color: $green;
+    }
+    &__portfolio{
+        background-color: $blue;
+        color: $white;
+        margin-left: 0.5rem;
+    }
+
+    &__bg-img{
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: -1;
+        filter: blur(5px);
+    }
+}
+
+// --------------
+// ---- works ---
+// --------------
+
+.works{
+    text-align: center;
+    padding: $section-padding-mobile;
+
+    &__sub-heading{
+        // font-size: 1.6rem;
+        color: grey;
+        margin-top: 0.5rem;
+    }
+
+    &__benefits{
+        margin-top: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        padding: 0 3rem;
+    }
+
+    &__step{
+        margin: 1rem;
+    }
+
+    &__text{
+        font-size: 1.4rem;
+        font-weight: $bold;
+    }
+
+    &__subtext{
+        margin-top: 1rem;
+        font-size: 1.2rem;
+    }
+
+    &__img{
+        width: 75%;
+        margin: 0 auto;
+    }
+}
+
+// --------------
+// --- social ---
+// --------------
+
+.social-proof{
+    background-color: $blue;
+    color: $white;
+    text-align: center;
+    padding: $section-padding-mobile;
+
+    &__sub-heading{
+        font-size: 1.2rem;
+    }
+
+    &__testimonials{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 2.5rem;
+    }
+
+    &__testimonial-card{
+        background-color: $white;
+        color: black;
+
+        width: 75%;
+        margin: 1rem;
+        // padding: 1rem;
+        border-radius: 5px;
+    }
+
+    &__quote{
+        font-size: 1.2rem;
+        font-style: italic;
+        padding: 1rem 1rem 3rem 1rem;
+    }
+
+    &__person{
+        padding: 1rem;
+        border-top: $border;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    &__img{
+        border-radius: 20px;
+        width: 30px;
+        height: 30px;
+    }
+
+    &__companies{
+        margin-top: 2.5rem;
+    }
+
+    &__companies img{
+        margin: 0 auto;
+        padding: 1rem;
+        width: 35%;
+    }
+}
+
+// --------------
+// --- folio ----
+// --------------
+
+.portfolio{
+    text-align: center;
+    padding: $section-padding-mobile;
+
+    &__heading{
+        margin-top: 2rem;
+    }
+
+    &__sub-heading{
+        margin-top: 0.5rem;
+    }
+
+    &__grid{
+        margin: 4rem 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        grid-gap: 2rem;
+    }
+
+    &__img{
+        border-radius: 2px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+// --------------
+// ---- lead ----
+// --------------
+
+.lead-funnel{
+    background-color: $blue;
+    color: $white;
+    padding: 6rem 2rem;
+
+    &__heading{
+        font-size: 1.6rem;
+    }
+
+    &__input{
+        background-color: $white;
+        height: 3rem;
+        border-radius: 2px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 0.2rem;
+        // width: 65%;
+        margin: 1.5rem auto 0 auto;
+    }
+
+    input{
+        background-color: $white;
+        border: none;
+        outline: none;
+        width: 100%;
+    }
+
+    &__btn{
+        background-color: $blue;
+        height: 90%;
+        width: 15%;
+        outline: none;
+        border: none;
+        border-radius: 2px;
+    }
+}
+
+// --------------
+// -- footer ----
+// --------------
+
+footer{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+footer p{
+    padding: 0.5rem;
+}
+
+footer > div{
+    margin: 2rem;
+}
+
+.company h6{
+    font-size: 1.4rem;
+}
+
+.company > p:nth-child(1){
+    font-weight: $bold;
+    font-size: 1.1rem;
+}
+
+h6{
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+}
+
+.copyright{
+    border-top: $border;
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+}

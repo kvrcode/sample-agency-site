@@ -1,0 +1,33 @@
+@mixin viewport ($breakpoint) {
+
+    @if $breakpoint == mobile {
+        @media only screen and (min-width: 450px){
+            @content;
+        }
+    }
+    @if $breakpoint == tablet {
+        @media only screen and (min-width: 768px){
+            @content;
+        }
+    }
+    @if $breakpoint == tablet-side {
+        @media only screen and (min-width: 900px){
+            @content;
+        }
+    }
+    @if $breakpoint == laptop {
+        @media only screen and (min-width: 1024px){
+            @content;
+        }
+    }
+    @if $breakpoint == desktop {
+        @media only screen and (min-width: 1400px){
+            @content;
+        }
+    }
+    @if $breakpoint == 4k {
+        @media only screen and (min-width: 2500px){
+            @content;
+        }
+    }
+}
